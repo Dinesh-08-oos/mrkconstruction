@@ -399,13 +399,170 @@
       font-size: 18px;
       background-color: none;
     }
+
+
+    @media screen and (min-width: 320px) and (max-width: 858px) {
+    .product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .product-card {
+        text-align: center;
+    }
+
+    .product-card img {
+        width: 260px;
+        max-width: 600px;
+        height: 200px;
+    }
+
+    h2 {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 858px) {
+    .card-container {
+        text-align: center;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 18px;
+        padding-top: 15px;
+    }
+
+    .weight-bridge-card {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .card {
+        display: flex;
+        width: 270px;
+        justify-content: center;
+    }
+
+    .card img {
+        width: 300px;
+        max-width: 250px;
+        height: auto;
+        min-height: 200px;
+    }
+
+  
+}
+@media screen and (min-width: 320px) and (max-width: 858px) {
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    #contact {
+        margin-top: 10px !important; /* Set top margin */
+        width: 100%;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 10px; /* Prevent content overflow */
+        box-sizing: border-box;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .col-md-5 {
+        width: 100%;
+        margin-left: 0 !important; /* Remove unnecessary margin */
+        padding: 0 15px;
+    }
+
+    .vertical-divider {
+        border-right: none; /* Remove divider on small screens */
+    }
+
+.new-contact {
+    margin-top: 50px;
+    
+  }
+    form {
+        width: 100%;
+    }
+
+    .map-responsive iframe {
+        width: 100%;
+        height: 300px; /* Adjust height for smaller screens */
+    }
+
+}
+
+
+
+
+@media screen and (min-width: 320px) and (max-width: 858px) {
+  .navbar.fixed-top img {
+    height: 40px !important; /* Reduced logo size */
+  }
+  .navbar.fixed-top h1 {
+    font-size: 12px !important; /* Reduced text size */
+    position: static !important; /* Ensure no extra offset */
+    margin-left: 10px; /* Optional spacing from logo */
+    line-height: 40px; /* Align text vertically with the image */
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 585px) {
+  .about-section, .delivery-section {
+    height: auto; /* Let the content define the height */
+    flex-direction: column; /* Stack elements vertically */
+    padding: 20px; /* Reduce padding for smaller screens */
+  }
+
+  .about-content, .delivery-content {
+    max-width: 100%;
+    padding: 15px; /* Adjust padding for readability */
+  }
+
+  .about-heading {
+    font-size: 24px; /* Slightly smaller font size */
+    width: 100%; /* Use full width of container */
+    margin-top: 10px;
+    padding-top: 20px;
+  }
+
+  .about-paragraph {
+    font-size: 16px; /* Reduce font size for better fit */
+    width: 100%; /* Allow paragraph to span full container */
+  }
+}
+
+
   </style>
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container-fluid">
       <img src="mrknew.png" alt="Logo" style="height: 80px;">
+      <h1 style="
+      font-family: fantasy; 
+      background: linear-gradient(to right, green, rgb(10, 10, 10),GREEN); 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent;
+  ">
+      Sri Ramana Associates
+  </h1>
+  
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon bg-warning" ></span>
       </button>
@@ -452,7 +609,7 @@
         <img src="carusol3.JPG" class="d-block w-100" alt="Sand Image 2">
       </div>
       <div class="carousel-item">
-        <img src="coursel2.JPG" class="d-block w-100" alt="Sand Image 3">
+        <img src="carusol2.JPG" class="d-block w-100" alt="Sand Image 3">
       </div>
       <!--
       <div class="carousel-item">
@@ -578,7 +735,7 @@ In addition to the regular weighbridge services, a Wayment Bridge is also availa
 
 
   <!-- Contact Us Section -->
-  <section id="contact" class="section" style="margin-top: 20px;">
+  <section id="contact" class="section" style="margin-top: 20px; background-color: rgb(126, 201, 126);">
     <div class="container">
       <h2>Contact Us</h2>
       <div class="row">
@@ -627,7 +784,7 @@ In addition to the regular weighbridge services, a Wayment Bridge is also availa
           
         </div>
         <!-- Right Column: Additional Information & Map -->
-        <div class="col-md-5" style="margin-left: 60px; font-size: 16px;">
+        <div class="col-md-5 new-contact" style="margin-left: 60px; font-size: 16px;">
           <div class="additional-info">
             <h3>Our Contact Details</h3>
             <p>
