@@ -71,15 +71,69 @@
       gap: 30px;
       flex-wrap: wrap;
     }
+    
+    @media screen and (min-width: 320px) and (max-width: 858px) {
+  .navbar.fixed-top img {
+    height: 40px !important; /* Reduced logo size */
+  }
+  .navbar.fixed-top h1 {
+    font-size: 22px !important; /* Reduced text size */
+    position: static !important; /* Ensure no extra offset */
+    margin-left: 10px; /* Optional spacing from logo */
+    line-height: 40px; /* Align text vertically with the image */
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 585px) {
+  .about-section, .delivery-section {
+    height: auto; /* Let the content define the height */
+    flex-direction: column; /* Stack elements vertically */
+    padding: 20px; /* Reduce padding for smaller screens */
+  }
+
+  .about-content, .delivery-content {
+    max-width: 100%;
+    padding: 15px; /* Adjust padding for readability */
+  }
+
+  .about-heading {
+    font-size: 24px; /* Slightly smaller font size */
+    width: 100%; /* Use full width of container */
+    margin-top: 10px;
+    padding-top: 20px;
+  }
+
+  .about-paragraph {
+    font-size: 16px; /* Reduce font size for better fit */
+    width: 100%; /* Allow paragraph to span full container */
+  }
+}
+
+/* Specific media query for 375px width */
+@media screen and (max-width: 375px) {
+  .navbar.fixed-top img {
+    height: 40px !important; /* Further reduced logo size for 375px */
+  }
+  .navbar.fixed-top h1.new-text {
+    font-size: 12px !important; /* Reduced font size for h1 on 375px screens */
+  }
+}
   </style>
 </head>
 <body>
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg fixed-top bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        
             <img src="mrknew.png" alt="Logo" style="height: 60px;">
-        </a>
+            <h1 class="new-text" style="
+            font-family: fantasy; 
+            background: linear-gradient(to right, green, rgb(10, 10, 10),GREEN); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+        ">
+            Sri Ramana Associates
+        </h1>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
