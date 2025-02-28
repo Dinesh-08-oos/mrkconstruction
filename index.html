@@ -234,7 +234,7 @@
 
     #WhiteSandDetails {
       margin-top: 10px;
-      background-color: #f3ef11;
+      background-color: rgb(241, 241, 173);
       padding: 15px;
       border-radius: 10px;
       width: 100%;
@@ -242,22 +242,20 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
+    /* Updated Product List Styles */
     .product-list {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 10px;
+      gap: 20px;
       width: 100%;
     }
 
     .product-card {
-      flex: 1 1 calc(12.5% - 10px);
       background: white;
       padding: 10px;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       text-align: center;
-      height: 300px;
       transition: transform 0.3s ease-in-out;
     }
 
@@ -267,7 +265,7 @@
 
     .product-card img {
       width: 100%;
-      height: 250px;
+      height: 200px;
       object-fit: cover;
       border-radius: 5px;
     }
@@ -279,6 +277,49 @@
       background-color: transparent;
     }
 
+    /* Mobile (default): One card per row */
+    @media screen and (max-width: 767px) {
+      .product-list {
+        flex-direction: column;
+      }
+      
+      .product-card {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+    }
+
+    /* Tablet: Two cards per row */
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      .product-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      
+      .product-card {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    /* Laptop/Desktop: All in one row */
+    @media screen and (min-width: 1025px) {
+      .product-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 15px;
+      }
+      
+      .product-card {
+        flex: 1;
+        min-width: 0; /* Prevents flex items from overflowing */
+        max-width: calc(20% - 12px); /* For 5 cards, accounting for gap */
+      }
+    }
+
     .additional-info {
       font-size: 20px;
       font-weight: bold;
@@ -286,7 +327,7 @@
 
     .card-container {
       margin-top: 5px;
-      background-color: yellow;
+      background-color: rgb(241, 241, 173);
     }
 
     .weight-bridge-card {
@@ -404,115 +445,92 @@
       background-color: none;
     }
 
-
     @media screen and (min-width: 320px) and (max-width: 858px) {
-    .product-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 10px;
-        justify-content: center;
-    }
-
-    .product-card {
-        text-align: center;
-    }
-
-    h2 {
-        font-size: 16px;
-        text-align: center;
-    }
-}
-
-@media screen and (min-width: 320px) and (max-width: 858px) {
-    .card-container {
-        text-align: center;
-        padding: 10px;
-    }
-
-    .text{
-      margin-top: 10px;
-    }
-
-    h1 {
-      
-        font-size: 18px;
-        padding-top: 15px;
-    }
-
-    .weight-bridge-card {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 10px;
-        justify-content: center;
-    }
-
-    .card {
-        display: flex;
-        margin-left: 15px;
-        width:95%;
-    }
-
-    
-
-  
-}
-@media screen and (min-width: 320px) and (max-width: 858px) {
-    body {
+      body {
         overflow-x: hidden; /* Prevent horizontal scrolling */
-    }
+      }
 
-    #contact {
-        margin-top: 10px !important; /* Set top margin */
+      #contact {
+        margin-top: 10px !important; 
+        font-size: 20px;
         width: 100%;
-    }
+      }
 
-    .container {
+      .container {
         width: 100%;
         padding: 0 10px; /* Prevent content overflow */
         box-sizing: border-box;
-    }
+      }
 
-    .row {
+      .row {
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
-    }
+      }
 
-    .col-md-5 {
+      .form-label{
+        text-align: right !important;
+      }
+
+      .vertical-divider {
+        border-right: none; 
+        width: 100%;
+        margin-left: 0 !important; /* Remove unnecessary margin */
+        padding: 0 15px;/* Remove divider on small screens */
+      }
+
+      .new-contact {
+        margin-top: 50px;
         width: 100%;
         margin-left: 0 !important; /* Remove unnecessary margin */
         padding: 0 15px;
-    }
-
-    .vertical-divider {
-        border-right: none; /* Remove divider on small screens */
-    }
-
-.new-contact {
-    margin-top: 50px;
-    
-  }
-    form {
+      }
+      form {
         width: 100%;
-    }
+      }
 
-    .map-responsive iframe {
+      .map-responsive iframe {
         width: 100%;
         height: 300px; /* Adjust height for smaller screens */
+      }
     }
 
-}
+    @media screen and (max-width: 747px) {
+      .weight-bridge-card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center; /* Center images */
+      }
 
+      .card {
+        width: 100%;
+        text-align: center;
+      }
 
+      .card img {
+        width: 100%; /* Ensure images take full width */
+        height: auto; /* Maintain aspect ratio */
+        min-height: 300px;
+      }
 
+      h1 {
+        font-size: 18px;
+        text-align: center;
+      }
 
-@media screen and (min-width: 320px) and (max-width: 858px) {
+      .text {
+        padding: 15px;
+        text-align: justify;
+      }
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 858px) {
   .navbar.fixed-top img {
     height: 40px !important; /* Reduced logo size */
   }
   .navbar.fixed-top h1 {
-    font-size: 12px !important; /* Reduced text size */
+    font-size: 22px !important; /* Reduced text size */
     position: static !important; /* Ensure no extra offset */
     margin-left: 10px; /* Optional spacing from logo */
     line-height: 40px; /* Align text vertically with the image */
@@ -529,7 +547,6 @@
   .about-content, .delivery-content {
     max-width: 100%;
     padding: 15px; /* Adjust padding for readability */
-    
   }
 
   .about-heading {
@@ -537,7 +554,6 @@
     width: 100%; /* Use full width of container */
     margin-top: 10px;
     padding-top: 20px;
-    
   }
 
   .about-paragraph {
@@ -546,7 +562,15 @@
   }
 }
 
-
+/* Specific media query for 375px width */
+@media screen and (max-width: 375px) {
+  .navbar.fixed-top img {
+    height: 40px !important; /* Further reduced logo size for 375px */
+  }
+  .navbar.fixed-top h1.new-text {
+    font-size: 12px !important; /* Reduced font size for h1 on 375px screens */
+  }
+}
   </style>
 </head>
 <body>
@@ -554,7 +578,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container-fluid">
       <img src="mrknew.png" alt="Logo" style="height: 80px;">
-      <h1 style="
+      <h1 class="new-text" style="
       font-family: fantasy; 
       background: linear-gradient(to right, green, rgb(10, 10, 10),GREEN); 
       -webkit-background-clip: text; 
