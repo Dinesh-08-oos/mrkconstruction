@@ -30,7 +30,7 @@
       color: hsl(236, 85%, 51%) !important;
     }
     .sand-info {
-      background-color: rgb(241, 241, 173);
+      background-color:  rgb(61, 199, 241);
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -130,6 +130,26 @@
   }
   .navbar.fixed-top h1.new-text {
     font-size: 12px !important; /* Reduced font size for h1 on 375px screens */
+  }
+}
+@media (min-width: 1024px) {
+  #sandDetails .row {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure the cards stay in a single row */
+    justify-content: space-between; /* Adjust spacing between cards */
+  }
+
+  #sandDetails .row .d-flex {
+    flex: 1; /* Allow each card to take equal space */
+    margin: 0 10px; /* Add some margin between cards */
+  }
+
+  #sandDetails .row .d-flex:first-child {
+    margin-left: 0; /* Remove left margin for the first card */
+  }
+
+  #sandDetails .row .d-flex:last-child {
+    margin-right: 0; /* Remove right margin for the last card */
   }
 }
   </style>
