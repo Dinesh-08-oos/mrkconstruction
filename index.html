@@ -161,67 +161,78 @@
     }
     /* Contact Section Styling */
     #contact {
-      background-image: url('contact.jpg');
-      padding: 60px 0;
-    }
+      background: linear-gradient(to right, #56CCF2, #2F80ED);
+      padding: 80px 0;
+      color: white;
+  }
 
-    #contact h2 {
+  #contact h2 {
       text-align: center;
       margin-bottom: 40px;
-      font-size: 2.5em;
-      color: #333;
-    }
+      font-size: 2.8em;
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+  }
 
-    #contact form {
-      background:  rgb(61, 199, 241);
+  #contact form {
+      background: rgba(26, 7, 7, 0.15);
+      backdrop-filter: blur(10px);
       padding: 40px;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
 
-    #contact .form-control {
-      border: 1px solid #ddd;
-      padding: 10px;
+  #contact .form-control {
+      border: none;
+      padding: 12px;
       margin-bottom: 20px;
-      border-radius: 5px;
-    }
+      border-radius: 6px;
+      font-size: 1.1em;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+  }
 
-    #contact .btn-primary {
-      background-color: #007bff;
-      border-color: #007bff;
-      padding: 10px 20px;
+  #contact .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+  }
+
+  #contact .btn-primary {
+      background: #ff7eb3;
+      border: none;
+      padding: 12px 24px;
       font-size: 1.2em;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    #contact .btn-primary:hover {
-      background-color: #0056b3;
-      border-color: #004085;
-    }
-
-    .map-responsive {
-      overflow: hidden;
-      padding-bottom: 56.25%;
-      position: relative;
-      height: 0;
-    }
-
-    .map-responsive iframe {
-      left: 0;
-      top: 0;
-      height: 100%;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      display: block;
       width: 100%;
-      position: absolute;
-      border: 0;
-      border-radius: 10px;
-    }
+  }
 
-    /* Vertical divider for larger screens */
-    .vertical-divider {
-      border-right: 0.5px solid #0e0d0d;
-      padding-right: 30px;
-    }
+  #contact .btn-primary:hover {
+      background: #ff4e87;
+      transform: translateY(-2px);
+  }
+
+  .vertical-divider {
+      border-right: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .new-contact {
+      font-size: 18px;
+      color: #fff;
+  }
+
+  .new-contact h3 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+  }
+
+  .map-responsive iframe {
+      width: 100%;
+      height: 350px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
 
     /* For small screens, switch to a horizontal divider */
     @media (max-width: 767.98px) {
@@ -835,16 +846,15 @@ In addition to the regular weighbridge services, a Wayment Bridge is also availa
             </p>
             <!-- Map Embed -->
             <div class="map-responsive mt-4">
-              <a href="https://www.google.com/maps?q=12.947139,79.215611" target="_blank">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15544.123456789012!2d79.215611!3d12.947139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU2JzQ5LjciTiA3OcKwMTInNTYuMiJF!5e0!3m2!1sen!2sus!4v1698765432100"
-                  width="800"
-                  height="350"
-                  style="border:0;"
-                  allowfullscreen=""
-                  loading="lazy">
-                </iframe>
-              </a>
+              <iframe 
+    src="https://www.google.com/maps?q=12.947000,79.215611&z=18&output=embed" 
+    width="600" 
+    height="450" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+</iframe>
+
             </div>              
           </div>
         </div>
@@ -974,6 +984,11 @@ In addition to the regular weighbridge services, a Wayment Bridge is also availa
         }
       });
     });
+    const password = prompt("Enter the password:");
+    if (password !== "jalli@123") { // Set your password here
+      alert("Access denied!");
+      window.location.href = "/";
+    }
   </script>
 </body>
 </html>
