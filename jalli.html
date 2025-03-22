@@ -152,6 +152,42 @@
     margin-right: 0; /* Remove right margin for the last card */
   }
 }
+@keyframes blinkGlow {
+    0% {
+      transform: scale(1);
+      box-shadow: none;
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.9);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: none;
+      opacity: 1;
+    }
+  }
+
+  .badge {
+    animation: blinkGlow 1s infinite;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Adding delay for each badge */
+  #badge40mm {
+    animation-delay: 0s;
+  }
+  #badge20mm {
+    animation-delay: 1s;
+  }
+  #badge12mm {
+    animation-delay: 2s;
+  }
+  #badge6mm {
+    animation-delay: 3s;
+  }
   </style>
 </head>
 <body>
@@ -206,7 +242,6 @@
         </p>
       </div>
     </div>
-
     <div id="availableSizes" class="available-sizes my-4">
       <h2 class="text-center">Available Sizes</h2>
       <div class="row justify-content-center mt-3">
