@@ -151,42 +151,41 @@
   #sandDetails .row .d-flex:last-child {
     margin-right: 0; /* Remove right margin for the last card */
   }
-}
-@keyframes blinkGlow {
+}    
+ @keyframes shiningEffect {
     0% {
-      transform: scale(1);
-      box-shadow: none;
-      opacity: 1;
-    }
-    50% {
-      transform: scale(1.2);
-      box-shadow: 0 0 20px rgba(0, 123, 255, 0.9);
-      opacity: 1;
+      left: -100%;
     }
     100% {
-      transform: scale(1);
-      box-shadow: none;
-      opacity: 1;
+      left: 100%;
     }
   }
 
   .badge {
-    animation: blinkGlow 1s infinite;
-    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    padding: 6px 10px; /* Decreased width */
+    font-size: 14px; /* Slightly smaller text */
+    font-weight: bold;
+    border-radius: 8px;
+    color: white;
+    background: rgba(255, 255, 255, 0.15); /* Light glass effect */
+    backdrop-filter: blur(5px); /* Frosted glass look */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle glass border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Soft shadow */
   }
 
-  /* Adding delay for each badge */
-  #badge40mm {
-    animation-delay: 0s;
-  }
-  #badge20mm {
-    animation-delay: 1s;
-  }
-  #badge12mm {
-    animation-delay: 2s;
-  }
-  #badge6mm {
-    animation-delay: 3s;
+  .badge::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 15%; /* Slightly wider for a better effect */
+    height: 100%;
+    background: linear-gradient(110deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: skewX(-20deg); /* Adds a slanting effect */
+    animation: shiningEffect 2s infinite linear;
   }
   </style>
 </head>
